@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url='Menu.pdf'" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Redirecting to PDF...</title>
+    <script>
+        window.location.replace("Menu.pdf?v=" + Date.now());
+    </script>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="Menu_compressed.pdf">click here to open the PDF.</a></p>
+    <p>If you are not redirected automatically,
+       <a id="fallback" href="Menu.pdf">click here to open the PDF.</a></p>
+    <script>
+        document.getElementById("fallback").href = "Menu.pdf?v=" + Date.now();
+    </script>
 </body>
 </html>
